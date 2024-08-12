@@ -56,6 +56,17 @@ public class HelloApplication extends Application {
         Label lnameLabel = new Label("Last Name:");
         TextField lNameField = new TextField();
         Button submit = new Button("Submit");
+        try {
+            appConnection = DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+        } catch (SQLException e) {
+
+        } finally {
+            try {
+                appConnection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
         submit.setOnAction(e -> {
             try {
