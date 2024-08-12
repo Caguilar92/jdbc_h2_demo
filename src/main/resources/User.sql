@@ -1,0 +1,6 @@
+
+
+CREATE TABLE IF NOT EXISTS USER_TABLE (
+     fname VARCHAR(50),
+     lname VARCHAR(50)
+);
